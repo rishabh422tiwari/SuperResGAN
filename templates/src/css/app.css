@@ -1,0 +1,64 @@
+body{
+    background-image: url(../images/m5.avif);
+    background-repeat: no-repeat;
+    background-size:cover; 
+}
+.heading{
+    font-size: 500%;
+    margin-left: -10%; 
+    color: rgb(56, 55, 55);
+    margin-top: 3%;
+}
+.heading:hover{
+    text-shadow: 4px 2px 4px #bbbbc0;
+}
+.sub-div{
+    display: flex;
+}
+.margin{
+  margin-left: 5%;
+}
+.main-box{
+  margin-left: 30% ;
+  padding: 3%;
+}
+.image{
+  width: 37%;
+  margin: 6% 8%;
+}
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  *::-webkit-scrollbar {
+    width: 6px; 
+ }
+
+*::-webkit-scrollbar-track {
+
+    background-color: rgb(27, 27, 61);
+}
+*::-webkit-scrollbar-thumb {
+  background:  rgb(18, 18, 19);
+  border-radius: 25px;
+}
+
+
+  .btn {
+    border: 2px solid rgb(196, 194, 194);
+    color: rgb(241, 234, 234);
+    background-color: rgb(10, 10, 10);
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    /* font-weight: bold; */
+  }
+
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
