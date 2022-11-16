@@ -1,12 +1,23 @@
-from flask import Flask, render_template, request
-
+from flask import Flask
+import datetime
+  
+x = datetime.datetime.now()
+  
+# Initializing flask app
 app = Flask(__name__)
-
-@app.route('/', methods=['GET'])
-def hello_word():
-    return render_template('index.html')
-
-
-
+  
+  
+# Route for seeing a data
+@app.route('/imageData')
+def imageData():
+  
+    # Returning an api for showing in  reactjs
+    return {
+        'Name':"geek", 
+        "Age":"22", 
+        "programming":"python"
+        }
+  
+# Running app
 if __name__ == '__main__':
-     app.run(port=3000,debug=True)
+    app.run(debug=True)
