@@ -5,6 +5,7 @@ body{
     background-size:cover;
     border: 15px solid rgb(223, 223, 228);
     margin: 0%; 
+    width: 100%;
 }
 .heading{
     font-size: 550%;
