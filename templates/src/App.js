@@ -8,14 +8,17 @@ export default function App() {
   const [getData, setGetData] = useState("");
 
   const fetchData = async () => {
-    const request = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ Image: file }),
-    };
-    const data = await fetch("http://localhost:5000/", request);
-    const images = await data.json();
-    setGetData(images);
+    const formData = new FormData();
+    formData.append('file',file)
+    console.log(file)
+    // const request = {
+    //   method: "POST",
+    //   body: formData,
+    // };
+    // const data = await fetch("http://127.0.0.1:8000/upload", request);
+    // const images = await data.json();
+    // console.log(images);
+    // setGetData(images);
   };
 
   return (
@@ -67,6 +70,7 @@ export default function App() {
                 {result && (
                   <div className="display-div div-size result-div">
                     <img className="display-image" src={file} alt="Not Found..!" />
+                    <button onClick={()=>{fetchData()}}>click</button>
                   </div>
                 )}
              </div>
