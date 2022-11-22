@@ -7,18 +7,18 @@ export default function App() {
   const [result, setResult] = useState(false);
   const [getData, setGetData] = useState("");
 
-  const fetchData = async () => {
+  const fetchData = async (image) => {
     const formData = new FormData();
-    formData.append('file',file)
+    formData.append('file',image)
     console.log(file)
-    // const request = {
-    //   method: "POST",
-    //   body: formData,
-    // };
-    // const data = await fetch("http://127.0.0.1:8000/upload", request);
-    // const images = await data.json();
-    // console.log(images);
-    // setGetData(images);
+    const request = {
+      method: "POST",
+      body: formData,
+    };
+    const data = await fetch("http://127.0.0.1:8000/upload", request);
+    const images = await data.json();
+    console.log(images);
+    setGetData(images);
   };
 
   return (
@@ -48,7 +48,7 @@ export default function App() {
                         type="file"
                         name="myfile"
                         onChange={(e) => {
-                          setFile(URL.createObjectURL(e.target.files[0]));
+                          fetchData(e.target.files[0]);
                           setResult(true);
                         }}
                       />
@@ -70,7 +70,7 @@ export default function App() {
                 {result && (
                   <div className="display-div div-size result-div">
                     <img className="display-image" src={file} alt="Not Found..!" />
-                    <button onClick={()=>{fetchData()}}>click</button>
+                    {/* <button onClick={()=>{fetchData()}}>click</button> */}
                   </div>
                 )}
              </div>
