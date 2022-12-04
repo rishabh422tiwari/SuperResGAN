@@ -37,7 +37,7 @@ app.add_middleware(
 
 model_path = 'models/RRDB_ESRGAN_x4.pth'  # models/RRDB_ESRGAN_x4.pth OR models/RRDB_PSNR_x4.pth
 #device = torch.device('cuda')  # if you want to run on CPU, change 'cuda' -> cpu
-device = torch.device('mps')
+device = torch.device('cpu')
 
 model = arch.RRDBNet(3, 3, 64, 23, gc=32)
 model.load_state_dict(torch.load(model_path), strict=True)
@@ -84,7 +84,7 @@ def convert():
         output = np.transpose(output[[2, 1, 0], :, :], (1, 2, 0))
         output = (output * 255.0).round()
         cv2.imwrite('results/{:s}_rlt.png'.format(base), output)
-    path = r'/Users/rishabhtiwari/pytorch-test/SuperResGAN/results'
+    path = r'C:\Users\muska\Desktop\superRes\SuperResGAN\results'
     file_path = os.path.join(path, os.listdir(path)[1])
     if os.path.exists(file_path):
         return FileResponse(file_path)
