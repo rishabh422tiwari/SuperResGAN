@@ -4,8 +4,8 @@ import img2 from "./images/blur1.jpg";
 import img1 from "./images/focus1.jpg";
 import img3 from "./images/cloud-computing.png";
 import process from "./images/process.png"
-import download from "./images/45162.png"
-import Loading from "./images/loading.gif";
+import download from "./images/d.png"
+import Loading from "./images/200w.gif";
 
 export default function App() {
   const bottomRef = useRef(null);
@@ -44,33 +44,23 @@ export default function App() {
   return (
     <>
       <div>
-        <h1 className="heading">Super Resolution</h1>
+        <h1 className="heading">SUPER RESOLUTION</h1>
       </div>
+
+
       <div className="sub-div">
+        
         <div id="shadow" className="content-div">
-          A <b>Machine Learning powered </b>
-          <br />
-          <br />
-          Web application for images
-          <br />
-          <br />
-          those are torn out or was <br />
-          <br />
-          taken in bad quality to turn <br />
-          <br />
-          into an enhanced image Using <br />
-          <br />
-          ESRGAN as a core model,
-          <br />
-          <br />
-          <b>React.js</b> for front-end <br />
-          <br />
-          and to establish communication
-          <br />
-          <br />
-          between two an backend server <br />
-          <br />
-          built with <b>FastAPI</b>.
+          A <span className="bold"><b>Machine Learning</b></span> powered <br /><br />
+          Web application for images<br /><br />
+          those are torn out or was <br /><br />
+          taken in bad quality to turn <br /><br />
+          into an enhanced image Using <br /><br />
+          <span className="bold"><b>ESRGAN</b></span> as a core model,<br /><br />
+          <span className="bold"><b>React.js</b></span> for front-end <br /><br />
+          and to establish communication<br /><br />
+          between two an backend server <br /><br />
+          built with <span className="bold"><b>FastAPI</b></span>.
         </div>
 
         <div className="main-div">
@@ -105,8 +95,9 @@ export default function App() {
               />
             </label>
           </div>
-
-          <div ref={bottomRef} className="sub-div uploded-div">
+        </div>
+      </div>
+      <div ref={bottomRef} className="sub-div uploded-div">
             {isImage && (
               <>
                 <div className="display-div">
@@ -128,17 +119,15 @@ export default function App() {
                         />
                       </>
                     ) : (
-                   <image src={Loading} alt="Not Found..!" />
+                   <img src={Loading} alt="Not Found..!" />
                     )} 
                   </div>
                 )}
               </>
             )}
           </div>
-        </div>
-      </div>
       <div className="button-div">
-        <div>
+        <div className="process-btn">
           {isImage && (
             <button
             className="btn"
@@ -152,9 +141,9 @@ export default function App() {
             </button>
           )}
         </div>
-        <div className="download">
+        <div className="download-btn">
           {clearImage && (
-            <a className="btn link" href={clearImage} download><img src={download} alt="ups" className="icon"/>Download</a>
+            <a className="btn link" href={clearImage} download><img src={download} alt="Not Found" className="icon"/>Download</a>
           )}
         </div>
       </div>

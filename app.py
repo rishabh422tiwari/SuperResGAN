@@ -6,7 +6,6 @@ import os
 from fastapi.middleware.cors import CORSMiddleware
 
 
-
 import os.path as osp
 import glob
 import cv2
